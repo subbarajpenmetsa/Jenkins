@@ -24,7 +24,7 @@ pipeline {
             }
         stage('Push image to ECR') {
             steps {
-                sh 'docker push 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest'
+                sh 'docker push 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest && docker push 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:v1'
             }  
             }
         stage('Test') {
