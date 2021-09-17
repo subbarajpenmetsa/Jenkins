@@ -29,14 +29,13 @@ pipeline {
             }
         stage('Test') {
             steps {
-                sh 'chmod +x ./update-service.bash'
-                sh 'll'
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
-            steps {
-                sh './update-service.bash'
+            steps {                
+                sh 'chmod +x ./update-service.bash'
+                sh 'bash ./update-service.bash'
             }
         }
     }
