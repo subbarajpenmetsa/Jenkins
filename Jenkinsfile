@@ -14,17 +14,17 @@ pipeline {
             }
         stage('Build DOcker image') {
             steps {
-                sh 'docker build -t javarepo:v1 .'
+                sh 'docker build -t 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest .'
             }   
         }
         stage('tagging image') {
             steps {
-                sh 'docker tag javarepo:v1 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest'
+                sh 'docker tag 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:$BUILD_NUMBER'
             }  
             }
         stage('Push image to ECR') {
             steps {
-                sh 'docker push 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest && docker push 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:v1'
+                sh 'docker push 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest && docker push 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:$BUILD_NUMBER'
             }  
             }
         stage('Test') {
