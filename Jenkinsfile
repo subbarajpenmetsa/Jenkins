@@ -19,7 +19,7 @@ pipeline {
         }
         stage('tagging image') {
             steps {
-                sh 'docker tag javarepo:latest 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest'
+                sh 'docker tag javarepo:v1 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest'
             }  
             }
         stage('Push image to ECR') {
