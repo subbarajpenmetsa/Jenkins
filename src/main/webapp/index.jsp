@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hello World! Subbu</h2>
+<h2>Hello World from java-app!</h2>
 </body>
 </html>
