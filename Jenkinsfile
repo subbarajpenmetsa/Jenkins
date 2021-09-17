@@ -29,14 +29,14 @@ pipeline {
             }
         stage('Test') {
             steps {
-                sh 'chmod +x Dockerfile'
+                sh 'chmod +x ./update-service.bash'
                 sh 'll'
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
             steps {
-                sh ./update-service.bash
+                sh './update-service.bash'
             }
         }
     }
