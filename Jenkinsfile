@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                mvn install && ls && pwd
+                sh 'mvn install && ls && pwd'
             }
         }
         stage('Test') {
