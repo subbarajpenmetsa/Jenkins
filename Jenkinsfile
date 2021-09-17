@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn install && ls && pwd'
-                sh 'sudo usermod -aG docker ${USER}'
+                sh 'mvn install && ls && pwd''
                 sh 'docker build -t hello-world:v1 .'
             }
             
