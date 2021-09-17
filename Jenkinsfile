@@ -2,13 +2,31 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build java app') {
             steps {
                 sh 'mvn install && ls && pwd'
-                sh 'docker build -t hello-world:v1 .'
             }
-            
         }
+        stage('ECR login ') {
+            steps {
+                sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 779468985484.dkr.ecr.us-east-1.amazonaws.com'
+            }  
+            }
+        stage('Build DOcker image') {
+            steps {
+                sh 'docker build -t javarepo:v1 .'
+            }   
+        }
+        stage('tagging image') {
+            steps {
+                sh 'docker tag javarepo:latest 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest'
+            }  
+            }
+        stage('Push image to ECR') {
+            steps {
+                sh 'docker push 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest'
+            }  
+            }
         stage('Test') {
             steps {
                 echo 'Testing..'
