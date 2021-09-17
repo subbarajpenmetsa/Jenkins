@@ -43,7 +43,7 @@ pipeline {
                     NEW_TASK_DEF=$(echo $OLD_TASK_DEF | jq --arg NDI $NEW_DOCKER_IMAGE '.taskDefinition.containerDefinitions[0].image=$NDI')
                     FINAL_TASK=$(echo $NEW_TASK_DEF | jq '.taskDefinition|{family: .family, volumes: .volumes, memory: .memory, containerDefinitions: .containerDefinitions}')
                     echo $FINAL_TASK
-                    aws ecs register-task-definition --family $TASK_FAMILY --requires-compatibilities "FARGATE" --execution-role-arn "arn:aws:iam::779468985484:role/ecsTaskExecutionRole" --cpu "256" --memory "512" --network-mode "awsvpc" --cli-input-json "$(echo $FINAL_TASK)"
+                    aws ecs register-task-definition --family $TASK_FAMILY --requires-compatibilities "FARGATE" --region us-east-1 --execution-role-arn "arn:aws:iam::779468985484:role/ecsTaskExecutionRole" --cpu "256" --memory "512" --network-mode "awsvpc" --cli-input-json "$(echo $FINAL_TASK)"
                     aws ecs update-service --service $SERVICE_NAME --region us-east-1 --task-definition $TASK_FAMILY --cluster $CLUSTER_NAME
                 '''
             }
