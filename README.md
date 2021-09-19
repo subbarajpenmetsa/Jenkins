@@ -3,7 +3,6 @@
 
 # Solution
 
-
 # Sample Java Application: java-app
     - This sample application contains 
         -SRC
@@ -16,6 +15,7 @@
 
     - index.jsp contains sample code which prints 'Hello World from java-app! (paas-task-2)'
     - pom.xml
+
 
 # project(pipeline-as-code): paac-task-2
     -  Sample Java Code
