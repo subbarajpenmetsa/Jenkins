@@ -12,12 +12,12 @@ pipeline {
                 sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 779468985484.dkr.ecr.us-east-1.amazonaws.com'
             }  
             }
-        stage('Build DOcker image') {
+        stage('Build Docker image') {
             steps {
                 sh 'docker build -t 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest .'
             }   
         }
-        stage('tagging image') {
+        stage('Tagging image') {
             steps {
                 sh 'docker tag 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:latest 779468985484.dkr.ecr.us-east-1.amazonaws.com/javarepo:$BUILD_NUMBER'
             }  
