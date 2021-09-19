@@ -41,8 +41,11 @@
 -   Create AWS ECR repository
 -   Create AWS ECS cluster: `java-app`   of type `Fargate` in default region us-east-1
 -   Create a task definition: `java-app` for the cluster
+
 -   ![image](https://user-images.githubusercontent.com/18718672/133916407-47d2e4a6-eabc-4091-bea4-d1a51561b080.png)
--   ![image](https://user-images.githubusercontent.com/18718672/133916443-ed6a9233-e7e9-4e0f-86c1-7141f4e20162.png)
+
+-   ![image](https://user-images.githubusercontent.com/18718672/133916563-b7903b70-103b-4e6b-b9f3-4dc6f8d0d775.png)
+
 -   ![image](https://user-images.githubusercontent.com/18718672/133916474-f0142700-13e9-4c7b-9084-1ea596b169df.png)
 
 
