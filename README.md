@@ -41,6 +41,10 @@
 -   Create AWS ECR repository
 -   Create AWS ECS cluster: `java-app`   of type `Fargate` in default region us-east-1
 -   Create a task definition: `java-app` for the cluster
+-   ![image](https://user-images.githubusercontent.com/18718672/133916407-47d2e4a6-eabc-4091-bea4-d1a51561b080.png)
+-   ![image](https://user-images.githubusercontent.com/18718672/133916443-ed6a9233-e7e9-4e0f-86c1-7141f4e20162.png)
+-   ![image](https://user-images.githubusercontent.com/18718672/133916474-f0142700-13e9-4c7b-9084-1ea596b169df.png)
+
 
 ##  Github Configuration
 
@@ -50,6 +54,9 @@
 ## Jenkins Configuration
 - Add AWS Keys to Jenkins
 - Add GitHub repository secret to Jenkins server
+- Pipeline
+- ![image](https://user-images.githubusercontent.com/18718672/133916539-620e96a3-86c0-4759-9808-09513c101b05.png)
+
 
 
 - If we make any changes to the code (app code, Jenkins file or Docker file), Jenkins pipeline will trigger and all the above mentioned stages will be executed and latest changes will be pushed to ECR, it will create a new task defination and it will be active and old task will be removed once the new task started running by create new task definition, update the ECS service and start a rolling deployment. 
@@ -57,5 +64,6 @@
 - After the change deployed sucessfully, access the application with pulic ip
     http://publicip:8080/java-app/index.jsp
     
-    ![image](https://user-images.githubusercontent.com/18718672/133916385-32135b2c-7fb5-4b96-ab11-60b02d75585c.png)
+    ![image](https://user-images.githubusercontent.com/18718672/133916504-720f8bf3-2052-4669-b733-3f00ea4c1b9a.png)
+
 
