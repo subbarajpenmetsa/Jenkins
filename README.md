@@ -56,3 +56,6 @@
 
 - After the change deployed sucessfully, access the application with pulic ip
     http://publicip:8080/java-app/index.jsp
+    
+    ![image](https://user-images.githubusercontent.com/18718672/133916385-32135b2c-7fb5-4b96-ab11-60b02d75585c.png)
+
